@@ -12,18 +12,6 @@ while (sourceList.length > 0) {
   audioList.push(audio);
 }
 
-function playSound() {
-  audioList = shuffle(audioList);
-  var delay = r(50, 500);
-  for (let sound of audioList) {
-    window.setTimeout(function() {
-      sound.currentTime = 0;
-      sound.play();
-    }, delay);
-    delay += r();
-  }
-}
-
 function r(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
@@ -46,6 +34,14 @@ document.onscroll = function(e) {
   }
   if (window.scrollY > discoverDepth) {
     discoverDepth += imageHeight;
-    playSound();
+    audioList = shuffle(audioList);
+    var delay = r(50, 500);
+    for (let sound of audioList) {
+      window.setTimeout(function() {
+        sound.currentTime = 0;
+        sound.play();
+      }, delay);
+      delay += r();
+    }
   }
 };
