@@ -1,0 +1,14 @@
+html, body{
+    width:100%;
+    height:120%;
+    margin: 0
+}
+
+.scroll-item{
+    /* width:224px;
+    height:255px; */
+    width:100%;
+    height:1574px;
+    background-image: url("../img/pic.jpg");
+    background-position-x: -20px;
+};
