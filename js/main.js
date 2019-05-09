@@ -4,6 +4,7 @@ var bodyHeight = body.scrollHeight;
 var singleHeight = si.clientHeight / 7;
 var discoverDepth = 20;
 var imageHeight = 225;
+var firstClick = false;
 
 var sourceList = ["1.wav", "2.wav", "3.wav"];
 var audioList = [];
@@ -39,9 +40,18 @@ document.onscroll = function(e) {
     for (let sound of audioList) {
       window.setTimeout(function() {
         sound.currentTime = 0;
-        sound.play();
+        sound.play().catch(function(e) {
+          if(firstClick){
+            throw(e)
+          }
+        });
       }, delay);
       delay += r();
     }
   }
+};
+
+document.onclick = function(e) {
+  document.querySelector(".banner").remove();
+  document.onclick = null;
 };
