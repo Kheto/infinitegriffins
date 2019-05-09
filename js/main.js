@@ -46,7 +46,6 @@ document.onscroll = function(e) {
   }
   if (window.scrollY > discoverDepth) {
     discoverDepth += imageHeight;
-    audio.currentTime = 0;
     playSound();
   }
 };
