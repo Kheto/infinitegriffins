@@ -9,14 +9,14 @@ html, body{
     color:#fff;
     background-color: #0000007a;
     float: left;
+    position: sticky;
+    top:0;
     width: 100%;
     display: flex;
     justify-content: space-around;
 }
 
 .scroll-item{
-    /* width:224px;
-    height:255px; */
     width:100%;
     height:1574px;
     background-image: url("../img/griffin.jpg");
