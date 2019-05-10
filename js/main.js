@@ -51,7 +51,9 @@ window.addEventListener("scroll", function(e) {
   }
 });
 
-document.onclick = function(e) {
+
+window.addEventListener("click", function(e) {
   document.querySelector(".banner").remove();
   document.onclick = null;
-};
+});
+
