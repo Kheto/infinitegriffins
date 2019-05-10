@@ -28,7 +28,7 @@ function shuffle(a) {
   return a;
 }
 
-document.onscroll = function(e) {
+window.addEventListener("scroll", function(e) {
   if (window.scrollY > (bodyHeight - window.innerHeight) / 2) {
     body.appendChild(si.cloneNode());
     bodyHeight = body.scrollHeight;
@@ -41,15 +41,15 @@ document.onscroll = function(e) {
       window.setTimeout(function() {
         sound.currentTime = 0;
         sound.play().catch(function(e) {
-          if(firstClick){
-            throw(e)
+          if (firstClick) {
+            throw e;
           }
         });
       }, delay);
       delay += r();
     }
   }
-};
+});
 
 document.onclick = function(e) {
   document.querySelector(".banner").remove();
