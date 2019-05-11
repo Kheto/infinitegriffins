@@ -54,8 +54,8 @@ try {
 
   window.addEventListener("click", function(e) {
     alert("test")
-    document.getElementsByClassName("banner")[0].remove();
-    document.onclick = null;
+    // document.getElementsByClassName("banner")[0].remove();
+    // document.onclick = null;
   });
 } catch (e) {
   document.getElementsByTagName("body").innerText = e.message;
