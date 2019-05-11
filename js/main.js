@@ -51,9 +51,11 @@ window.addEventListener("scroll", function(e) {
   }
 });
 
-
 window.addEventListener("click", function(e) {
-  document.querySelector(".banner").remove();
-  document.onclick = null;
+  try {
+    document.querySelector(".banner").remove();
+    document.onclick = null;
+  } catch (e) {
+    document.getElementsByTagName("body").innerText = e.message;
+  }
 });
-
