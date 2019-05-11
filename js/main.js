@@ -31,26 +31,29 @@ try {
   }
 
   window.addEventListener("scroll", function(e) {
-    if (window.scrollY > (bodyHeight - window.innerHeight) / 2) {
-      wrapper.appendChild(si.cloneNode());
-      bodyHeight = wrapper.scrollHeight;
-    }
-    if (window.scrollY > discoverDepth) {
-      discoverDepth += imageHeight;
-      audioList = shuffle(audioList);
-      var delay = r(50, 500);
-      for (let sound of audioList) {
-        window.setTimeout(function() {
-          sound.currentTime = 0;
-          sound.play().catch(function(e) {
-            if (firstClick) {
-              throw e;
-            }
-          });
-        }, delay);
-        delay += r();
+    try{
+      if (window.scrollY > (bodyHeight - window.innerHeight) / 2) {
+        wrapper.appendChild(si.cloneNode());
+        bodyHeight = wrapper.scrollHeight;
       }
-    }
+      if (window.scrollY > discoverDepth) {
+        discoverDepth += imageHeight;
+        audioList = shuffle(audioList);
+        var delay = r(50, 500);
+        for (let sound of audioList) {
+          window.setTimeout(function() {
+            sound.currentTime = 0;
+            sound.play().catch(function(e) {
+              if (firstClick) {
+                throw e;
+              }
+            });
+          }, delay);
+          delay += r();
+        }
+      }
+
+    }catch(e){alert(e.message)}
   });
 
   window.addEventListener("click", function(e) {
