@@ -53,7 +53,8 @@ try {
   });
 
   window.addEventListener("click", function(e) {
-    document.querySelector(".banner").remove();
+    alert("test")
+    document.getElementsByClassName("banner")[0].remove();
     document.onclick = null;
   });
 } catch (e) {
