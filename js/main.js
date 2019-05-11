@@ -1,7 +1,8 @@
 try {
   var si = document.querySelector(".scroll-item");
-  var body = document.querySelector("body");
-  var bodyHeight = body.scrollHeight;
+  //var body = document.querySelector("body");
+  var wrapper = document.querySelector("#wrapper");
+  var bodyHeight = wrapper.scrollHeight;
   var singleHeight = si.clientHeight / 7;
   var discoverDepth = 20;
   var imageHeight = 225;
@@ -31,8 +32,8 @@ try {
 
   window.addEventListener("scroll", function(e) {
     if (window.scrollY > (bodyHeight - window.innerHeight) / 2) {
-      body.appendChild(si.cloneNode());
-      bodyHeight = body.scrollHeight;
+      wrapper.appendChild(si.cloneNode());
+      bodyHeight = wrapper.scrollHeight;
     }
     if (window.scrollY > discoverDepth) {
       discoverDepth += imageHeight;
@@ -54,9 +55,9 @@ try {
 
   window.addEventListener("click", function(e) {
     alert("test")
-    // document.getElementsByClassName("banner")[0].remove();
-    // document.onclick = null;
+    document.getElementsByClassName("banner")[0].remove();
+    document.onclick = null;
   });
 } catch (e) {
-  document.getElementsByTagName("body").innerText = e.message;
+  // document.getElementsByTagName("body").innerText = e.message;
 }
